@@ -1,14 +1,15 @@
 package com.api.entity;
 
-import lombok.Data;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 
 public class Merchant {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long merchantId;
 
     private String merchantName;
@@ -19,14 +20,14 @@ public class Merchant {
 
     private String address;
 
-    private Integer accountNumber;
+    private Long accountNumber;
 
-    private String phoneNumber;
+    private Long phoneNumber;
 
     public Merchant() {
     }
 
-    public Merchant(Long merchantId, String merchantName, String gstin, String pan, String address, Integer accountNumber, String phoneNumber) {
+    public Merchant(Long merchantId, String merchantName, String gstin, String pan, String address, Long accountNumber, Long phoneNumber) {
         this.merchantId = merchantId;
         this.merchantName = merchantName;
         this.gstin = gstin;
@@ -76,19 +77,19 @@ public class Merchant {
         this.address = address;
     }
 
-    public Integer getAccountNumber() {
+    public Long getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(Integer accountNumber) {
+    public void setAccountNumber(Long accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public String getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

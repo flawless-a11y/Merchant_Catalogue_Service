@@ -57,26 +57,24 @@ public class Helper {
                     Cell cell = cells.next();
 
                     switch (cid) {
+
                         case 0:
-                            merchant.setMerchantId((long) cell.getNumericCellValue() );
-                            break;
-                        case 1:
                             merchant.setMerchantName(cell.getStringCellValue());
                             break;
-                        case 2:
+                        case 1:
                             merchant.setGstin(cell.getStringCellValue());
                             break;
-                        case 3:
+                        case 2:
                             merchant.setPan(cell.getStringCellValue());
                             break;
-                        case 4:
+                        case 3:
                             merchant.setAddress(cell.getStringCellValue());
                             break;
-                        case 5:
-                            merchant.setAccountNumber((int) cell.getNumericCellValue());
+                        case 4:
+                            merchant.setAccountNumber((long) cell.getNumericCellValue());
                             break;
-                        case 6:
-                            merchant.setPhoneNumber(cell.getStringCellValue());
+                        case 5:
+                            merchant.setPhoneNumber((long) cell.getNumericCellValue());
                             break;
                         default:
                             break;
