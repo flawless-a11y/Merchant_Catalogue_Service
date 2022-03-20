@@ -1,19 +1,21 @@
 package com.api.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 
 public class Merchant {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @Column(columnDefinition="serial")
     private Long merchantId;
 
     private String merchantName;
 
+    @Id
     private String gstin;
 
     private String pan;
@@ -24,10 +26,19 @@ public class Merchant {
 
     private Long phoneNumber;
 
+    @CreationTimestamp
+    @Column(name = "create_date" , updatable = false)
+    private Date created;
+
+    @UpdateTimestamp
+    private Date modified;
+
+
     public Merchant() {
     }
 
-    public Merchant(Long merchantId, String merchantName, String gstin, String pan, String address, Long accountNumber, Long phoneNumber) {
+    public Merchant(Long merchantId, String merchantName, String gstin, String pan, String address,
+                    Long accountNumber, Long phoneNumber, Date created, Date modified) {
         this.merchantId = merchantId;
         this.merchantName = merchantName;
         this.gstin = gstin;
@@ -35,6 +46,8 @@ public class Merchant {
         this.address = address;
         this.accountNumber = accountNumber;
         this.phoneNumber = phoneNumber;
+        this.created = created;
+        this.modified = modified;
     }
 
     public Long getMerchantId() {
@@ -91,5 +104,21 @@ public class Merchant {
 
     public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getModified() {
+        return modified;
+    }
+
+    public void setModified(Date modified) {
+        this.modified = modified;
     }
 }

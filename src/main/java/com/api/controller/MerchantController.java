@@ -34,7 +34,7 @@ public class MerchantController {
             return ResponseEntity.ok(body);
 
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload excel file ");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please upload exel file with .xlsx format");
 
     }
 

@@ -36,7 +36,6 @@ public class Helper {
             XSSFWorkbook workbook = new XSSFWorkbook(is);
 
             XSSFSheet sheet = workbook.getSheet("data");
-            System.out.println(sheet);
             int rowNumber = 0;
             Iterator<Row> iterator = sheet.iterator();
             while (iterator.hasNext()) {

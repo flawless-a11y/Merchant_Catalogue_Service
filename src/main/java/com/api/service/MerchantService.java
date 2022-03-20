@@ -20,6 +20,7 @@ public class MerchantService {
 
         try{
             List<Merchant> merchantList= Helper.convertExcelToListOfMerchant(file.getInputStream());
+
             this.merchantRepo.saveAll(merchantList);
         }catch (IOException e){
             e.printStackTrace();
