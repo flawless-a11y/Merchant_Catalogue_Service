@@ -10,9 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -32,6 +30,7 @@ public class MerchantController {
 
             Map<String ,String> body = new HashMap<>();
             body.put("message","File is uploaded and the data is saved to db");
+
             return ResponseEntity.ok(body);
 
         }
