@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class Merchant {
 
-    @Column(columnDefinition="serial")
+    @Column(insertable = false, updatable = false, columnDefinition="serial")
     private Long merchantId;
 
     private String merchantName;
@@ -27,7 +27,7 @@ public class Merchant {
     private Long phoneNumber;
 
     @CreationTimestamp
-    @Column(name = "create_date" , updatable = false)
+    @Column(name = "created" , updatable = false)
     private Date created;
 
     @UpdateTimestamp
