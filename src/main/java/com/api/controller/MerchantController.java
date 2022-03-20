@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -40,6 +41,12 @@ public class MerchantController {
 
     @GetMapping("/merchant")
     public List<Merchant> getAllMerchant(){
+
         return this.merchantService.getAllMerchants();
+    }
+
+    @GetMapping("/merchant/{id}")
+    public Optional<Merchant> getMerchantById(@PathVariable("id") Long Id){
+        return this.merchantService.getMerchantById(Id);
     }
 }

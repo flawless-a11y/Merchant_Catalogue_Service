@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MerchantService {
@@ -29,5 +30,10 @@ public class MerchantService {
     public List<Merchant> getAllMerchants(){
         return this.merchantRepo.findAll();
     }
+
+    public Optional<Merchant> getMerchantById(Long Id){
+        return merchantRepo.findByMerchantId(Id);
+    }
+
 }
 
